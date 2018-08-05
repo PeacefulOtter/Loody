@@ -1,0 +1,205 @@
+html, body {
+  height: 100%;
+}
+
+@font-face {
+    font-family: ProductSansRegular;
+    src: url(fonts/Product_Sans_Regular.ttf);
+}
+@font-face {
+    font-family: ProductSansBold;
+    src: url(fonts/Product_Sans_Bold.ttf);
+}
+
+.main-wrapper {
+		border-radius: 4px;
+		background-color: white;
+		padding: 30px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		position: sticky; /*relative*/
+    z-index: 1;
+}
+
+.logo {
+    border-radius: 50%;
+    position: absolute;
+    left: 1%;
+    top: 10px;
+    z-index: -1;
+    width: 12%;
+	  height: auto;
+}
+
+.searchP {
+  position: sticky;
+  text-align: center;
+  font-family: ProductSansRegular;
+  font-size: 2vw;
+}
+
+.searchInput {
+  width: 30vw;
+  height: -10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 32%;
+}
+
+.searchInput[type=text], select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #a833f3;
+  position: relative;
+  left: 0%;
+  font-size: 20px;
+}
+
+.searchButton {
+    width: 2%;
+    height: 5%;
+    border: 0px;
+    background:url(img/searchicon2.png) no-repeat center;
+    background-size: 100% 100%;
+    background-color: none;
+		color: white;
+		position: relative;
+		border-radius: 50%;
+		padding: 0%;
+		margin: 0px 0px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		transition: color 1s ease, background-color 1s ease, transform 1s ease;
+}
+
+.searchButton:after {
+		content: "";
+		width: 100%;
+		height: 100%;
+		border: solid 2px;
+		transform: scale(1);
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		border-radius: 50%;
+		transition: all 1s ease;
+}
+
+.searchButton:hover:after {
+		transform: scale(1.2);
+		box-shadow: 10px 0 20px rgba(0, 0, 0, 0.19), 6px 0 6px rgba(0, 0, 0, 0.23);
+}
+
+.searchButton:nth-of-type(1)       { background-color: #aeb6c4; }
+.searchButton:nth-of-type(1):after { border-color: #a833f3; }
+
+.searchButton:hover {
+		background-color: transparent;
+		transform: rotate(360deg);
+		cursor: pointer;
+		box-shadow: none;
+}
+
+@media (min-width:200px) {
+	.searchButton {
+		padding: 10px;
+		margin: 5px;
+		font-size: 2rem;
+	}
+}
+
+@media (min-width:200px) {
+	.searchButton {
+		padding: 20px;
+		margin: 10px;
+		font-size: 4rem;
+	}
+	.searchButton:after {
+		border-width: 3px;
+		top: -3px;
+		left: -3px;
+	}
+}
+
+.main-result {
+  left: 2%;
+}
+
+.divResult {
+  display: none;
+  width: 16.5%;
+  height: 300px;
+  background-color: white;
+  padding: 1.08%;
+  margin-left: 1%;
+  margin-right: 0%;
+
+  /* Gradient background color*/
+  background: #8d1e9a;
+  background: -moz-linear-gradient(top, #a833f3 0%, #cc87f8 25%, #ffffff 100%);
+  background: -webkit-linear-gradient(top, #a833f3 0%, #cc87f8 25%, #ffffff 100%);
+  background: linear-gradient(to bottom, #a833f3 0%, #cc87f8 25%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a833f3', endColorstr='#f5e7fe',GradientType=0 );
+
+  /*sliding animation*/
+  position: relative;
+  -webkit-animation-name: slide; /* Safari 4.0 - 8.0*/
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0*/
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+/* Safari 4.0 - 8.0*/
+@-webkit-keyframes slide {
+  0%    { left: 0px; top: -100%; }
+  100%  { left: 0px; top: 0px; }
+}
+
+/* Standard syntax*/
+@keyframes slide {
+  0%    { left: 0px; top: -100%; }
+  100%  { left: 0px; top: 0%; }
+}
+
+.resultH {
+  text-align: left;
+  font-family: Comfortaa;
+  font-size: 22px;
+  line-height: 32px;
+  height: auto;
+  padding-bottom: 10px;
+}
+
+.thumbnail {
+  border-radius: 0%;
+  left: 1%;
+  top: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.resultP {
+  text-align: left;
+  font-family: Comfortaa;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 0px;
+  height: 0px;
+}
+
+.fill-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  /*these two lines are to hide my actual link text.*/
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.divResult:hover {
+  cursor: pointer;
+  background: red;
+  margin: 10px;
+}
+
