@@ -1,5 +1,17 @@
+/* #23d170 */
+
+/* clean page */
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-text-size-adjust: none;
+}
+
+/* remove border when clicking on element */
+*:focus {
+    outline: none;
 }
 
 @font-face {
@@ -11,12 +23,13 @@ html, body {
     src: url(fonts/Product_Sans_Bold.ttf);
 }
 
+
 .main-wrapper {
 		border-radius: 4px;
 		background-color: white;
 		padding: 30px;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-		position: sticky; /*relative*/
+		position: sticky;
     z-index: 1;
 }
 
@@ -24,9 +37,9 @@ html, body {
     border-radius: 50%;
     position: absolute;
     left: 1%;
-    top: 10px;
+    top: 0px;
     z-index: -1;
-    width: 12%;
+    width: 10%;
 	  height: auto;
 }
 
@@ -35,6 +48,7 @@ html, body {
   text-align: center;
   font-family: ProductSansRegular;
   font-size: 2vw;
+  line-height: 0px;
 }
 
 .searchInput {
@@ -120,86 +134,228 @@ html, body {
 	}
 }
 
-.main-result {
-  left: 2%;
-}
 
 .divResult {
   display: none;
-  width: 16.5%;
-  height: 300px;
+  position: relative;
+  float: left;
+  width: 17%;
+  height: auto;
   background-color: white;
-  padding: 1.08%;
-  margin-left: 1%;
-  margin-right: 0%;
+  padding: 1%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
 
-  /* Gradient background color*/
+  /* Gradient background color */
   background: #8d1e9a;
   background: -moz-linear-gradient(top, #a833f3 0%, #cc87f8 25%, #ffffff 100%);
   background: -webkit-linear-gradient(top, #a833f3 0%, #cc87f8 25%, #ffffff 100%);
   background: linear-gradient(to bottom, #a833f3 0%, #cc87f8 25%, #ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a833f3', endColorstr='#f5e7fe',GradientType=0 );
 
-  /*sliding animation*/
-  position: relative;
-  -webkit-animation-name: slide; /* Safari 4.0 - 8.0*/
-  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0*/
-  animation-name: slide;
+}
+
+.divResult.entry {
+  /* sliding animation */
+  -webkit-animation-name: slideEntryDiv; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+  animation-name: slideEntryDiv;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 
-/* Safari 4.0 - 8.0*/
-@-webkit-keyframes slide {
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes slideEntryDiv {
   0%    { left: 0px; top: -100%; }
-  100%  { left: 0px; top: 0px; }
+  100%  { left: 0px; top: 0%;    }
 }
 
-/* Standard syntax*/
-@keyframes slide {
-  0%    { left: 0px; top: -100%; }
-  100%  { left: 0px; top: 0%; }
+/* Standard syntax */
+@keyframes slideEntryDiv {
+  0%    { left: 0px; top: -500px; }
+  100%  { left: 0px; top: 0px;    }
 }
 
+/* animation when mouse is over the div */
+.divResult.hoverDiv:hover {
+  cursor: pointer;
+  -webkit-animation-name: slideHoverDiv; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 0.4s; /* Safari 4.0 - 8.0 */
+  animation-name: slideHoverDiv;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes slideHoverDiv {
+  0%    { left: 0px; top: 0px;  border-radius: 0%;  }
+  100%  { left: 0px; top: 15px; border-radius: 10%; }
+}
+
+/* Standard syntax */
+@keyframes slideHoverDiv {
+  0%    { left: 0px; top: 0px;  border-radius: 0%;  }
+  100%  { left: 0px; top: 15px; border-radius: 10%; }
+}
+
+
+/* Same animation but backwards */
+.divResult.notHoverDiv:not(:hover) {
+  -webkit-animation-name: slideNotHoverDiv; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 0.3s; /* Safari 4.0 - 8.0 */
+  animation-name: slideNotHoverDiv;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes slideNotHoverDiv {
+  0%    { left: 0px; top: 15px; border-radius: 10%; }
+  100%  { left: 0px; top: 0px;  border-radius: 0%;  }
+}
+
+/* Standard syntax */
+@keyframes slideNotHoverDiv {
+  0%    { left: 0px; top: 15px; border-radius: 10%; }
+  100%  { left: 0px; top: 0px;  border-radius: 0%;  }
+}
+
+/* So the text doesnt go to a third line and fits the div correctly */
+.format-shape-h {
+  height: 10vh;
+  text-align: justify;
+  overflow: hidden;
+  white-space: pre-line;
+  float: left;
+}
+
+/* Video title */
 .resultH {
   text-align: left;
   font-family: Comfortaa;
   font-size: 22px;
   line-height: 32px;
   height: auto;
-  padding-bottom: 10px;
+  margin-top: 6px;
+  padding-bottom: 0px;
 }
 
-.thumbnail {
+.shadow-box {
+  width: 100%;
+  height: auto;
   border-radius: 0%;
   left: 1%;
   top: 10px;
-  width: 100%;
-  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* Video thumbnail */
+.thumbnail {
+  width: 100%;
+}
+
+/* Channel name */
 .resultP {
-  text-align: left;
   font-family: Comfortaa;
   font-size: 30px;
   font-weight: bold;
-  line-height: 0px;
-  height: 0px;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* make the div clickable */
 .fill-div {
+  text-decoration: none;
+  color: black;
+}
+
+
+/* styling the footer */
+.footerDiv {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  bottom: 2.5%;
+  justify-content: center;
+}
+
+.footerP {
+  font-family: ProductSansRegular;
+  font-size: 1vw;
+  line-height: 0px;
+}
+
+.chart {
+  position: relative;
+  top: -25px;
+  left: -20px;
+  margin-top: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+.chart figcaption {
+  width: 40px;
+  height: 20px;
+}
+
+.chart img {
+  position: absolute;
+  max-width: 40px;
+  max-height: 40px;
+  background: white;
+}
+
+.chart svg {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 120%;
-  /*these two lines are to hide my actual link text.*/
-  text-indent: -9999px;
-  overflow: hidden;
 }
-.divResult:hover {
+
+.outer {
+  stroke: transparent;
+  stroke-width: 3;
+  fill: transparent;
+}
+.outer:hover {
+  stroke: #a833f3;
+  stroke-dasharray: 534;
+  transition: stroke-dashoffset 1s;
+  -webkit-animation-play-state: running;
+  -moz-transform: rotate(-89deg) translateX(-190px);
+}
+
+
+/* Set the initial values for the animation */
+.chart .outer:hover {
   cursor: pointer;
-  background: red;
-  margin: 10px;
+  stroke-dashoffset: 0;
+  -webkit-animation: circleAnim 2s;
+  animation: circleAnim 2s;
 }
+
+/* Keyframes for the initial animation */
+@-webkit-keyframes circleAnim {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes circleAnim {
+  from {
+    stroke-dashoffset: 537;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
 
