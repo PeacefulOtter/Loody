@@ -2,58 +2,118 @@
 <meta charset="UTF-8">
 <html>
     <head>
+        <title>Loody - Home</title>
+        <link rel="shortcut icon" href="img/LoodyLogoCrop.png" />
         <link rel="stylesheet" href="css/master.css">
-        <script src="assets/sketch.js" type="text/javascript"></script>
+
         <script src="assets/request.js" type="text/javascript"></script>
         <script src="assets/filter.js" type="text/javascript"></script>
         <script src="assets/display.js" type="text/javascript"></script>
         <!--<script src="assets/download.js" type="text/javascript"></script>-->
     </head>
 
-    <body>
+    <body oncontextmenu="return false">
         <div class="main-wrapper">
-            <img class="logo" src="img/LoodyLogo3.png" alt="logo">
-            <p class="searchP">Enter a <b>music title</b> and <b>download it</b> instantly</p>
+            <img class="logo" src="img/LoodyLogo3.png" alt="Loody Logo">
+            <p class="searchP">Search for a <b>video</b> and <b>download it</b> instantly</p>
             <input class="searchInput" id="input" name="input" maxlength="100" placeholder="Search.." type="text"></input>
             <button class="searchButton" onclick="searchMusic()"></button>
         </div>
 
+
         <div class="main-result">
-            <div class="divResult" id="div0">
-                <h2 class="resultH" id="h0"></h2>
-                <img class="thumbnail" id="t0">
-                <p class="resultP" id="p0"></p>
-                <a class="fill-div" id="a0" target="_blank" rel="noopener noreferrer" href="#"></a>
-            </div>
+
             <div class="divResult">
-                <h2 class="resultH" id="h1"></h2>
-                <img class="thumbnail" id="t1">
-                <p class="resultP" id="p1"></p>
-                <a class="fill-div" target="_blank" rel="noopener noreferrer" href="#"></a>
+                <a class="fill-div" href="#" download>
+                    <div class="format-shape-h">
+                        <h2 class="resultH" id="h0"></h2>
+                    </div>
+                    <img class="thumbnail" id="t0" alt="First Thumbnail">
+                    <p class="resultP" id="p0"></p>
+                </a>
             </div>
+
             <div class="divResult">
-                <h2 class="resultH" id="h2"></h2>
-                <img class="thumbnail" id="t2">
-                <p class="resultP" id="p2"></p>
-                <a class="fill-div" target="_blank" rel="noopener noreferrer" href="#"></a>
+                <a class="fill-div" target="_blank" rel="noopener noreferrer" href="#" download>
+                    <div class="format-shape-h">
+                        <h2 class="resultH" id="h1"></h2>
+                    </div>
+                    <img class="thumbnail" id="t1" alt="Second Thumbnail">
+                    <p class="resultP" id="p1"></p>
+                </a>
             </div>
+
             <div class="divResult">
-                <h2 class="resultH" id="h3"></h2>
-                <img class="thumbnail" id="t3">
-                <p class="resultP" id="p3"></p>
-                <a class="fill-div" target="_blank" rel="noopener noreferrer" href="#"></a>
+                <a class="fill-div" target="_blank" rel="noopener noreferrer" href="#" download>
+                    <div class="format-shape-h">
+                        <h2 class="resultH" id="h2"></h2>
+                    </div>
+                    <img class="thumbnail" id="t2" alt="Third Thumbnail">
+                    <p class="resultP" id="p2"></p>
+                </a>
             </div>
+
             <div class="divResult">
-                <h2 class="resultH" id="h4"></h2>
-                <img class="thumbnail" id="t4">
-                <p class="resultP" id="p4"></p>
-                <a class="fill-div" target="_blank" rel="noopener noreferrer" href="#"></a>
+                <a class="fill-div" target="_blank" rel="noopener noreferrer" href="#" download>
+                    <div class="format-shape-h">
+                        <h2 class="resultH" id="h3"></h2>
+                    </div>
+                    <img class="thumbnail" id="t3" alt="Forth Thumbnail">
+                    <p class="resultP" id="p3"></p>
+                </a>
             </div>
+
+            <div class="divResult">
+                <a class="fill-div" target="_blank" rel="noopener noreferrer" href="#" download>
+                    <div class="format-shape-h">
+                        <h2 class="resultH" id="h4"></h2>
+                    </div>
+                    <img class="thumbnail" id="t4" alt="Fifth Thumbnail">
+                    <p class="resultP" id="p4"></p>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="footerDiv">
+            <p class="footerP"><b>Loody</b> - Created by <b>LordGenji</b>#5987. Big thanks to minot0r#4365</p>
+            <figure class="chart">
+                <figcaption></figcaption>
+                <img class="footerLogos" src="img/discord.png" style="background:transparent" alt="Footer Logo Discord">
+                <svg>
+                    <a cx="150" cy="41" target="_blank" rel="noopener noreferrer" href="https://discord.gg/dDcd6nA">
+                        <circle class="outer" cx="150" cy="41" r="30" transform="rotate(-90, 95, 95)"/>
+                    </a>
+                </svg>
+            </figure>
+
+            <figure class="chart">
+                <figcaption></figcaption>
+                <img class="footerLogos" src="img/github.svg" style="background:transparent" alt="Footer Logo Github">
+                <svg>
+                    <a cx="150" cy="41" target="_blank" rel="noopener noreferrer" href="https://github.com/PeacefulOtter">
+                        <circle class="outer" cx="150" cy="41" r="30" transform="rotate(-90, 95, 95)"/>
+                    </a>
+                </svg>
+            </figure>
+
+            <figure class="chart">
+                <figcaption></figcaption>
+                <img class="footerLogos" src="img/youtube.svg" style="background:transparent" alt="Footer Logo Youtube">
+                <svg>
+                    <a cx="150" cy="41" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UClxvyvGrOicZEa-RqVfautQ">
+                        <circle class="outer" cx="150" cy="41" r="30" transform="rotate(-90, 95, 95)"/>
+                    </a>
+                </svg>
+            </figure>
         </div>
 
         <script>
             var arrayDiv = document.getElementsByClassName( 'divResult' );
             var arrayA   = document.getElementsByClassName( 'fill-div'  );
         </script>
+
+
     </body>
+
 </html>
