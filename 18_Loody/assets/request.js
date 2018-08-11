@@ -3,10 +3,12 @@ const xhr = new XMLHttpRequest();
 const API_KEY = 'AIzaSyABMSzlY77dVOt5Gs43GyLaLF9nNrNw-Bk'
 
 function searchMusic() {
-  // clear divResult
+  // clear divResult when the searchButton is trigger more than once
   for ( let i = 0; i < arrayDiv.length; i++ ) {
-    if ( arrayDiv[i].style.display === 'inline-block' ) {
-      arrayDiv[i].style.display = 'none';
+    if ( arrayDiv[ i ].style.display === 'inherit' ) {
+      arrayDiv[ i ].style.display = 'none';
+      arrayDiv[ i ].classList.remove( 'hoverDiv' );
+      arrayDiv[ i ].classList.remove( 'notHoverDiv' );
     }
   }
 
